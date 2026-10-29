@@ -1,0 +1,26 @@
+
+name: Test GitHub Integration
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  integration-test:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Simulate build
+        run: |
+          echo "Starting build..."
+          echo "Testing GitHub Actions integration..."
+          sleep 3
+          echo "Build successful!"
+          exit 0
